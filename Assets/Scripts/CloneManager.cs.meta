@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 16f5e971bb9944f48a088a27b61687cc
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - mainClone: {instanceID: 0}
+  - fatClone: {fileID: 100000, guid: 406037faf63f0d944b9d8812fad61285, type: 2}
+  - strongClone: {fileID: 100002, guid: 380d5c1e544e9914580b4d359c0afcc1, type: 2}
+  - emoClone: {fileID: 100002, guid: 8d3c228151e001a4fbdd549b4c4cae3b, type: 2}
+  - arrowIndicator: {instanceID: 0}
+  - bloodExplosion: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
