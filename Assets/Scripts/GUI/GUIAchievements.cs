@@ -52,7 +52,7 @@ public class GUIAchievements : IGUI
 		starFull = Resources.Load ("star_full") as Texture;
 		starEmpty = Resources.Load ("star_empty") as Texture;
 		
-		achievements = GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> () as LevelAchievements;
+		achievements = (LevelAchievements)GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> ();
 	}
 	
 	public void Draw ()
@@ -69,27 +69,28 @@ public class GUIAchievements : IGUI
 		
 //		LevelAchievements achievements = GameObject.Find("GlobalScripts").GetComponent<LevelAchievements>() as LevelAchievements;
 		
-		
-		if (achievements.levelCompleted) {
-			GUI.Label (new Rect (200, 250, 45, 45), starFull, GUIStyles.achievementIconStyle);
-		} else {
-			GUI.Label (new Rect (200, 250, 45, 45), starEmpty, GUIStyles.achievementIconStyle);
+		if (achievements != null) {
+			if (achievements.levelCompleted) {
+				GUI.Label (new Rect (200, 250, 45, 45), starFull, GUIStyles.achievementIconStyle);
+			} else {
+				GUI.Label (new Rect (200, 250, 45, 45), starEmpty, GUIStyles.achievementIconStyle);
+			}
+			GUI.Label (new Rect (250, 265, 900, 45), achievements.levelCompleteText, GUIStyles.leftTextStyle);
+			
+			if (achievements.achievement1Completed) {
+				GUI.Label (new Rect (200, 320, 45, 45), starFull, GUIStyles.achievementIconStyle);
+			} else {
+				GUI.Label (new Rect (200, 320, 45, 45), starEmpty, GUIStyles.achievementIconStyle);
+			}
+			GUI.Label (new Rect (250, 335, 900, 45), achievements.achievement1Text, GUIStyles.leftTextStyle);
+			
+			if (achievements.achievement2Completed) {
+				GUI.Label (new Rect (200, 390, 45, 45), starFull, GUIStyles.achievementIconStyle);
+			} else {
+				GUI.Label (new Rect (200, 390, 45, 45), starEmpty, GUIStyles.achievementIconStyle);
+			}
+			GUI.Label (new Rect (250, 405, 900, 45), achievements.achievement2Text, GUIStyles.leftTextStyle);
 		}
-		GUI.Label (new Rect (250, 265, 900, 45), achievements.levelCompleteText, GUIStyles.leftTextStyle);
-		
-		if (achievements.achievement1Completed) {
-			GUI.Label (new Rect (200, 320, 45, 45), starFull, GUIStyles.achievementIconStyle);
-		} else {
-			GUI.Label (new Rect (200, 320, 45, 45), starEmpty, GUIStyles.achievementIconStyle);
-		}
-		GUI.Label (new Rect (250, 335, 900, 45), achievements.achievement1Text, GUIStyles.leftTextStyle);
-		
-		if (achievements.achievement2Completed) {
-			GUI.Label (new Rect (200, 390, 45, 45), starFull, GUIStyles.achievementIconStyle);
-		} else {
-			GUI.Label (new Rect (200, 390, 45, 45), starEmpty, GUIStyles.achievementIconStyle);
-		}
-		GUI.Label (new Rect (250, 405, 900, 45), achievements.achievement2Text, GUIStyles.leftTextStyle);
 		
 		// Draws the OK button
 //		if(GUI.Button (new Rect (GUIPosX + (GUIWidth - buttonWidth) / 2, GUIPosY + GUIHeight * 3 / 4 + buttonHeight / 2, buttonWidth, buttonHeight), OKButtonContent))
@@ -104,7 +105,7 @@ public class GUIAchievements : IGUI
 	
 	public void UpdateAchievements ()
 	{
-		achievements = GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> () as LevelAchievements;	
+		achievements = (LevelAchievements)GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> ();	
 	}
 	
 	public void XPressed ()

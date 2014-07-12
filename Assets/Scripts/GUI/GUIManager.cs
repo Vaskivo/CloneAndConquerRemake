@@ -68,11 +68,11 @@ public class GUIManager : MonoBehaviour
 		
 	public void Update ()
 	{
-		if (Input.GetButtonUp ("Jump")) {
+		if (Input.GetButtonUp ("Jump") || Input.GetKeyUp (KeyCode.Z) || Input.GetKeyUp (KeyCode.Space) ) {
 			myActiveGUI.XPressed ();
 			return;
 		}
-		if (Input.GetButtonUp("Circle")) {
+		if (Input.GetButtonUp("Circle") || Input.GetKeyUp (KeyCode.X) ) {
 			myActiveGUI.OPressed ();	
 		}
 	}

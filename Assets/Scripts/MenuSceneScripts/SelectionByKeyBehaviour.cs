@@ -78,14 +78,14 @@ public class SelectionByKeyBehaviour : MonoBehaviour
 				canSelect = true;		
 			}
 		} else {
-			if(Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("Circle")) {
+			if(Input.GetKeyDown(KeyCode.X) || Input.GetButtonDown("Circle")) {
 				buttonsInMenu[selectedIndex].GetComponent<ButtonBehaviour>().leaveAchievementGUI();
 				showingAchievements = false;
 			}
 		}
 	
 		//Catch confirm
-		if(Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Jump"))
+		if(Input.GetKeyDown(KeyCode.Z) ||Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
 		{
 			if(backSelected)
 				backButton.GetComponent<ButtonBehaviour>().execute();

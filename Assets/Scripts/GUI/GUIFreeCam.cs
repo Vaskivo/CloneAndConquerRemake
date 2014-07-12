@@ -45,7 +45,7 @@ public class GUIFreeCam : IGUI
 		starFull = Resources.Load ("star_full") as Texture;
 		starEmpty = Resources.Load ("star_empty") as Texture;
 		
-		achievements = GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> () as LevelAchievements;
+		achievements = (LevelAchievements)GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> ();
 		achievPosition = new Vector2 (Screen.width * 0.55f, Screen.height * 0.8f);
 
 		secondaryGUI = EmptyGUI.Instance;
@@ -97,7 +97,7 @@ public class GUIFreeCam : IGUI
 	public void UpdateAchievements ()
 	{
 		if (!isTutor)
-			achievements = GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> () as LevelAchievements;	
+			achievements = (LevelAchievements)GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> ();	
 	}
 	
 	public void addConfirmationGUI (IGUI gui)

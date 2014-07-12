@@ -82,7 +82,7 @@ public class GUIDied : IGUI
 		// Draws the message
 		GUI.Label (new Rect (GUIPosX, GUIPosY + 50, GUIWidth, GUIHeight), "YOU HAVE DIED!", GUIStyles.upperCenterTextStyle);
 		
-		LevelAchievements achievements = GameObject.Find("GlobalScripts").GetComponent<LevelAchievements>() as LevelAchievements;
+		LevelAchievements achievements = (LevelAchievements)GameObject.Find("GlobalScripts").GetComponent<LevelAchievements>();
 		
 		if (achievements != null) {
 			if (achievements.levelCompleted) {
@@ -122,7 +122,7 @@ public class GUIDied : IGUI
 	
 	public void UpdateAchievements ()
 	{
-		achievements = GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> () as LevelAchievements;	
+		achievements = (LevelAchievements)GameObject.Find ("GlobalScripts").GetComponent<LevelAchievements> ();	
 	}
 
 	public void XPressed ()
